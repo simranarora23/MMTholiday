@@ -1,0 +1,25 @@
+package Page;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class S2PageFac {
+	WebDriver driver;
+	
+	
+	public S2PageFac(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver,this);
+	}
+
+@FindBy(xpath = "//div[@class=\"hdsw \"]/child::p[@class=\"makeFlex vrtlCenter\"]/child::button[@class=\"primaryBtn font24 latoBlack widgetSearchBtn lineHeight29\"]")
+WebElement searchBtn;		
+
+
+public void clickSearchBtn()
+{
+	searchBtn.click();
+}
+}

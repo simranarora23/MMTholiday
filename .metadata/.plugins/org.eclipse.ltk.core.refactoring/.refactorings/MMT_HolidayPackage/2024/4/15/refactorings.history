@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Page.PageFac&apos; to &apos;S1PageFac&apos;&#x0D;&#x0A;- Original project: &apos;MMT_HolidayPackage&apos;&#x0D;&#x0A;- Original element: &apos;Page.PageFac&apos;&#x0D;&#x0A;- Renamed element: &apos;Page.S1PageFac&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;PageFac&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;Page{PageFac.java[PageFac" matchStrategy="1" name="S1PageFac" qualified="false" references="true" similarDeclarations="false" stamp="1712924373044" textual="false" version="1.0"/>
+</session>

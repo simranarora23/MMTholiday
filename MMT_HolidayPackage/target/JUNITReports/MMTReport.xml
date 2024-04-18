@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="140.951" tests="5" skipped="0" failures="1" errors="0">
+<testcase classname="Holiday Pacakges Booking Functionality" name="Search for holiday packages" time="29.994">
+<system-out><![CDATA[
+Given user is on homepage of Make My Trip website...........................passed
+When user selects Holiday Package option....................................passed
+And user enters the details.................................................passed
+And clicks on Search button.................................................passed
+Then relevant holiday packages matching search criteria are displayed.......passed
+]]></system-out>
+</testcase>
+<testcase classname="Holiday Pacakges Booking Functionality" name="User applies filters to search Holiday Package" time="27.613">
+<system-out><![CDATA[
+Given user is on Holiday Package page.......................................passed
+When user performed Holiday Package search..................................passed
+And user applies filters such as Duration, Hotel Category, Flights, Themes and Package Type.passed
+Then Relevant search results are displayed..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Holiday Pacakges Booking Functionality" name="User sort holiday packages by price" time="27.471">
+<system-out><![CDATA[
+Given user is on the MakeMyTrip holiday package search page.................passed
+When user clicks on sorted by dropdown......................................passed
+And choose to sort the holidays by Price-Low to High........................passed
+Then the holidays should be displayed in ascending order of price...........passed
+]]></system-out>
+</testcase>
+<testcase classname="Holiday Pacakges Booking Functionality" name="User requests a callback using outline data - Example #1.1" time="28.519">
+<system-out><![CDATA[
+Given user is on the MakeMyTrip Holiday Packages landing page...............passed
+When user clicks on the "Get a Call Back" widget............................passed
+And user fills in the callback form with name "John", phone "9876543210" and email "john@test.com".passed
+And user clicks on "Get a Call Back" button.................................passed
+And fills the another form by selecting preffered travel date, hotel star category, number of nights, No. of travellers and language preference.passed
+And clicks on Submit button.................................................passed
+Then the message "Thank you John " should be displayed after submitting.....passed
+]]></system-out>
+</testcase>
+<testcase classname="Holiday Pacakges Booking Functionality" name="Hotel Category Filter with five star Selection" time="27.125">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&quot;errorPageWrapper has-filters&quot;]&quot;}
+  (Session info: chrome=123.0.6312.123)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bf1d7e86d412c8b9e4d393bd7ffa1f85, findElement {value=//div[@class=&quot;errorPageWrapper has-filters&quot;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.123, chrome: {chromedriverVersion: 123.0.6312.122 (31f8248cdd9..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53315}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53315/devtoo..., se:cdpVersion: 123.0.6312.123, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf1d7e86d412c8b9e4d393bd7ffa1f85">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class="errorPageWrapper has-filters"]"}
+  (Session info: chrome=123.0.6312.123)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bf1d7e86d412c8b9e4d393bd7ffa1f85, findElement {value=//div[@class="errorPageWrapper has-filters"], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.123, chrome: {chromedriverVersion: 123.0.6312.122 (31f8248cdd9..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53315}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53315/devtoo..., se:cdpVersion: 123.0.6312.123, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf1d7e86d412c8b9e4d393bd7ffa1f85
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.getText(Unknown Source)
+	at Page.S1PageFac.errorMessage(S1PageFac.java:492)
+	at StepDefinition.StepDefinitionHP.user_should_see_a_list_of_packages_available_for_selcted_hotel_category(StepDefinitionHP.java:251)
+	at ✽.User should see a list of packages available for selcted hotel category(file:///C:/Users/siarora/Desktop/Sprint/MMT_HolidayPackage/src/test/resource/Features/HolidayPackage.feature:75)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on the filter section of MakeMyTrip holiday packages page.....passed
+When User applies the hotel category filter for five star hotels............passed
+And User clicks on the five star hotel category filter......................passed
+Then User should see a list of packages available for selcted hotel category.failed
+]]></system-out>
+</testcase>
+</testsuite>

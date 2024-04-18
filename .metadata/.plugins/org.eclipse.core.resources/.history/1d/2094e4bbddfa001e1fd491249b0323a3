@@ -1,0 +1,67 @@
+package StepDefinition;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.Map;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+//import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
+import org.openqa.selenium.WebDriver;
+
+import Page.S1PageFac;
+import Page.S2PageFac;
+import DriverSetup.SetupDriver;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class BaseStepDefinition {
+	//Background//
+	static WebDriver driver;
+	static WebDriver driver1;
+	S1PageFac page;
+
+	@AfterStep
+	public static void takeScreendown(Scenario scenerio) {
+		   TakesScreenshot ts= (TakesScreenshot) driver;
+		   final byte[] src = ts.getScreenshotAs(OutputType.BYTES);
+		   scenerio.attach(src, "image/png",scenerio.getName());
+	}
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------
+//Scenario 2
+	
+	@When("user performed Holiday Package search")
+	public void user_performed_holiday_package_search() throws AWTException, InterruptedException {
+	    // Write code here that turns the phrase above into concrete actions
+		
+		
+	}
+
+	@When("user applies filters such as Duration, Hotel Category, Flights, Themes and Package Type")
+	public void user_applies_filters_such_as_duration_hotel_category_flights_themes_and_package_type() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Relevant search results are displayed")
+	public void relevant_search_results_are_displayed() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+
+
+
+
+}

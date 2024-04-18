@@ -1,0 +1,60 @@
+Feature: Holiday Pacakges Booking Functionality 
+Background: 
+Given user is on homepage of Make My Trip website
+When user selects Holiday Package option
+
+  #Scenario 1
+  #@searchHP
+  #Scenario: Search for holiday packages 
+    #
+    #And user enters the details 
+    #
+    #| Trip Details     |  Value       |
+    #| fromCity         |  Indore      |
+    #| toCity           |  Europe      |
+   #
+    #
+    #And clicks on Search button
+    #Then relevant holiday packages matching search criteria are displayed
+    
+
+#-------------------------------------------------------------------------------------------------------------
+
+
+  #Scenario 2
+  @searchPage
+  Scenario: User applies filters to search Holiday Package
+  When user performed Holiday Package search
+  And user applies filters such as Duration, Hotel Category, Flights, Themes and Package Type
+  Then Relevant search results are displayed
+  
+  #--------------------------------------------------------------------------------------------------------------
+  
+  
+  #@tag2
+  #Scenario Outline: Title of your scenario outline
+    #Given I want to write a step with <name>
+    #When I check for the <value> in step
+    #Then I verify the <status> in step
+#
+    #Examples: 
+      #| name  | value | status  |
+      #| name1 |     5 | success |
+      #| name2 |     7 | Fail    |
+#
+#-----------------------------------------------------------------------------------
+#
+#
+  #Scenario 2
+  #
+   #Scenario:  Filter Holiday Package search results
+    #Given User has searched for Holiday Package
+    #When User applies filters "<Duration>", "<Hotel Category>", "<Budget>", "<Flights>", "<Places>", "<Themes>" and "<Package Type>"
+    #Then Search results are updated to reflect applied filters
+    #
+#-------------------------------------------------------------------------------------------------------------------------------------------
+#
+#
+  #Scenario 3
+  #
+  

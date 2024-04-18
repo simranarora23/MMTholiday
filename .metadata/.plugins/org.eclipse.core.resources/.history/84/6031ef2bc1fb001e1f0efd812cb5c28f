@@ -1,0 +1,295 @@
+package Page;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class S1PageFac {
+
+	static WebDriver driver;
+
+	public S1PageFac(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver,this);
+	}
+
+	public void ExplicitWait(WebElement webElement,int time){
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+			wait.until(ExpectedConditions.elementToBeClickable(webElement));
+	 }
+
+
+	//Background//
+	
+	@FindBy(xpath=("//a[@href='https://www.makemytrip.com/holidays-india/']"))
+	WebElement HolidayPackage;
+	
+	@FindBy(xpath="//div[@class=\"hdsw_inner\"]/child::div[1]")
+	WebElement fromDiv;
+	
+	@FindBy(xpath="//div[@class=\"sections-citypicker-container\"]/child::input[@class=\"citypicker_input\"]")
+	WebElement fromInput;
+	
+	@FindBy(xpath="//div[@class=\"hdsw_inner\"]/child::div[1]/child::div[@data-testid=\"geoLocationSearch\"]/child::div[@class=\"sections-citypicker-container\"]/child::div[@class=\"citypicker_list\"]/child::div[@class=\"searchedCity\"]/ul/li[1]")
+	WebElement fromDrop;
+	
+	@FindBy(xpath="//div[@class=\"hdsw_inner\"]/child::div[@class=\"hdsw_inputBox selectHtlCity   grow-1\"]")
+	WebElement toDiv;
+	
+	@FindBy(xpath="//div[@class=\"dest-search-container\"]/child::input[@class=\"dest-search-input\"]")
+	WebElement toInput;
+	
+	@FindBy(xpath="//div[@class=\"dest-search-list\"]/child::div[1]/child::div[@class=\"dest-city-container\"]")
+	WebElement toDrop;
+	
+	@FindBy(xpath="//div[@class=\"DayPicker-Months\"]/child::div[@class=\"DayPicker-Month\"][2]/child::div[@class=\"DayPicker-Body\"]/child::div[@class=\"DayPicker-Week\"][4]/child::div[@aria-label=\"Sun May 19 2024\"]")
+	WebElement depDate;
+	
+	
+	@FindBy(xpath = "//div[@class=\"btnContainer \"]/child::button[@class=\"applyBtn\"]")
+	WebElement roomApply;
+	
+	@FindBy(xpath="//div[@class=\"filter-input-base\"]/child::div[@class=\"action-container\"]/child::button[@class=\"action\"]")
+	WebElement optApply;
+	
+	@FindBy(xpath = "//div[@class=\"hdsw_inputBox selectHtlCity inactiveWidget activeWidget grow-half\"]")
+	WebElement space;
+	
+	@FindBy(xpath = "//div[@class=\"hdsw \"]/child::p[@class=\"makeFlex vrtlCenter\"]/child::button[@id=\"search_button\"]")
+	WebElement searchBtn;
+//	@FindBy(id=("webklipper-publisher-widget-container-notification-close-div"))
+//	WebElement CrossIcon;
+	@FindBy(xpath ="//div[@class=\"sections-citypicker-container\"]/child::div[@class=\"citypicker_list\"]/child::div[@class=\"searchedCity\"]/child::ul[1]/child::li[1]")
+	WebElement listInput;
+	
+	@FindBy(xpath="//div[@class=\"intervention-popup  \"]/child::div[@class=\"intervention-close\"]")
+	WebElement hppageAdclose;
+	
+	@FindBy(xpath="//div[@class=\"filtersOuter\"]/child::div[@class=\"filterHeadouter\"]")
+	WebElement durationFilter;
+	
+	@FindBy(xpath="//div[@class=\"innerListSection\"]/child::label[2]/child::span[@class=\"customCheckbox\"]")
+	WebElement selectDuration;
+	
+	@FindBy(xpath="//div[@class=\"filterWrapper\"]/child::div[@class=\"filtersOuter\"][2]/child::div[@class=\"filterHeadouter\"]/child::span")
+	WebElement selectHotels;
+//  Scenario 2
+	
+//	@FindBy(xpath="//div[@id=\"modalpopup\"]/child::div[@class=\"modalContent\"]/child::span[@class=\"close closeIcon\"]")
+//	WebElement crossBtn;
+	
+	@FindBy( xpath= "//div[@class=\"modalContent\"]/span")
+	WebElement crossBtn;
+//	@FindBy(xpath="//div[@class=\"popup modalContainer planningHolidayModelWrapper planningHolidayModalWrapperV2 \"]/child::div[@class=\"_Modal modalCont  \"]/child::div[@class=\"modalContent\"]/child::span[@class=\"close closeIcon\"]")
+//	WebElement crossBtn;
+//	public void CloseAd()
+//	{
+//		CrossIcon.click();
+//	}
+	public void clickPackage() throws InterruptedException
+	{
+		
+		HolidayPackage.click();
+		Thread.sleep(1000);
+		 
+	}
+	
+	public void enterSource(String From_City) throws AWTException, InterruptedException
+	{
+		fromDiv.click();
+		Thread.sleep(1000);
+//		fromInput.click();
+		fromInput.clear();
+		Thread.sleep(1000);
+		fromInput.sendKeys(From_City);
+		Thread.sleep(1000);
+		Robot r=new Robot();
+	       r.keyPress(KeyEvent.VK_DOWN);
+//	       r.keyRelease(KeyEvent.VK_DOWN);
+	       r.keyPress(KeyEvent.VK_ENTER);
+//	       r.keyRelease(KeyEvent.VK_ENTER);
+		fromDrop.click();
+		Thread.sleep(1000);
+		
+		
+		
+		
+//		fromInput.click();
+//		Thread.sleep(1000);
+//		fromCity.click();
+//		fromCity.clear();
+//		Thread.sleep(1000);
+//		fromCity.sendKeys(From_City);
+//		Robot r=new Robot();
+//	       r.keyPress(KeyEvent.VK_DOWN);
+//	       r.keyRelease(KeyEvent.VK_DOWN);
+//	       r.keyPress(KeyEvent.VK_ENTER);
+//	       r.keyRelease(KeyEvent.VK_ENTER);
+//		Thread.sleep(1000);
+//		fromDrop.click();
+//		Thread.sleep(1000);
+  		
+	       
+	    
+	}
+	
+	
+	public void enterDest(String To_City) throws InterruptedException, AWTException {
+		
+		
+		toDiv.click();
+		Thread.sleep(1000);
+//		toInput.click();
+		toInput.sendKeys(To_City);
+		Thread.sleep(1000);
+		Robot r1=new Robot();
+	       r1.keyPress(KeyEvent.VK_DOWN);
+//	       r.keyRelease(KeyEvent.VK_DOWN);
+	       r1.keyPress(KeyEvent.VK_ENTER);
+//	       r.keyRelease(KeyEvent.VK_ENTER);
+		toDrop.click();
+		Thread.sleep(1000);
+		
+//		Thread.sleep(1000);
+//		toCity.click();
+//		Thread.sleep(1000);
+//		toCity.clear();
+//		Thread.sleep(1000);
+//		toCity.sendKeys(To_City);
+//		r.keyPress(KeyEvent.VK_DOWN);
+//	       r.keyRelease(KeyEvent.VK_DOWN);
+//	       r.keyPress(KeyEvent.VK_ENTER);
+//	       r.keyRelease(KeyEvent.VK_ENTER);
+//		Thread.sleep(1000);
+//		toDrop.click();
+//		Thread.sleep(1000);
+	       
+//		Thread.sleep(1000);
+//		clearInput.sendKeys(city);
+//		//Thread.sleep(3000);
+//		Robot r=new Robot();
+//	       r.keyPress(KeyEvent.VK_DOWN);
+//	       r.keyRelease(KeyEvent.VK_DOWN);
+//	       r.keyPress(KeyEvent.VK_ENTER);
+//	       r.keyRelease(KeyEvent.VK_ENTER);
+	}
+	
+	
+	public void enterDeparture() throws InterruptedException
+	{
+ 		depDate.click();
+	}
+	
+	public void enterRoomsGuests()
+	{
+		roomApply.click();
+	}
+	public void clickOptApply() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,100)");
+		Thread.sleep(1000);
+		optApply.click();
+	}
+	 
+	public void clickSearch()
+	{
+		searchBtn.click();
+	}
+	
+//	public void handleAlert()
+//	{
+//		try {
+//            // Wait for the alert to appear
+//            Thread.sleep(2000); // Adjust the wait time as needed
+//
+//            // Switch to the alert and click "Allow"
+//            driver.switchTo().alert().accept();
+//
+//            // Switch back to the default content (main page)
+//            driver.switchTo().defaultContent();
+//
+//            
+//        } catch (Exception e) {
+//            System.err.println("Error handling location access alert: " + e.getMessage());
+//        } 
+//	}
+//	
+	//Scenario 2
+	public void enterDetails() throws InterruptedException
+	{
+		Thread.sleep(1000);
+		fromDiv.click();
+		fromInput.click();
+		Thread.sleep(1000);
+		fromInput.clear();
+		Thread.sleep(1000);
+		fromInput.sendKeys("Indore");
+		Thread.sleep(1000);
+		toDiv.click();
+		toInput.click();
+		toInput.sendKeys("Europe");
+		Thread.sleep(1000);
+		listInput.click();
+		Thread.sleep(1000);
+		depDate.click();
+		Thread.sleep(1000);
+		roomApply.click();
+		Thread.sleep(1000);
+		optApply.click();
+		Thread.sleep(1000);
+
+		
+		
+	}
+
+	
+	public void crossPopup()
+	{
+		crossBtn.click();
+	}
+
+	public void closeAdEurope()
+	{
+//		 try {
+//				driver.switchTo().frame(driver.findElement(By.xpath("//div[@class=\"intervention-popup-container \"]/div[@class=\"intervention-popup  \"]/div[@class=\"intervention-close\"]")));
+//			WebElement close_popup = driver.findElement(By.cssSelector("div.intervention-close"));
+//			close_popup.click();
+//			driver.switchTo().defaultContent();
+//			} catch(Exception e) {
+//				e.printStackTrace();
+//			}
+		hppageAdclose.click();
+	}
+	public void applyFilters() throws InterruptedException
+	{
+		ExplicitWait(durationFilter,120);
+		durationFilter.click();
+//		ExplicitWait(selectDuration,10);
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,600)");
+		ExplicitWait(selectDuration,10);
+		selectDuration.click();
+		ExplicitWait(selectHotels,10);
+//		js.executeScript("window.scrollBy(0,100)");
+		selectHotels.click();
+		
+		
+		
+	}
+
+	
+		
+}

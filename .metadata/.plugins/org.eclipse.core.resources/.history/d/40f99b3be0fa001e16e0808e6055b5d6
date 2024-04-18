@@ -1,0 +1,68 @@
+package StepDefinition;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.Map;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+//import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
+import org.openqa.selenium.WebDriver;
+
+import Page.S1PageFac;
+import Page.S2PageFac;
+import DriverSetup.SetupDriver;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class BaseStepDefinition {
+	//Background//
+	static WebDriver driver;
+	
+	S1PageFac page;
+
+	
+	@Given("user is on homepage of Make My Trip website")
+	public void user_is_on_homepage_of_make_my_trip_website() throws AWTException, InterruptedException {
+	    // Write code here that turns the phrase above into concrete actions
+		driver=SetupDriver.chromedriver();
+		page= new S1PageFac(driver);
+
+	}
+	@When("user selects Holiday Package option")
+	public void user_selects_holiday_package_option() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@When("user enters the details")
+	public void user_enters_the_details(io.cucumber.datatable.DataTable dataTable) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //
+	    // For other transformations you can register a DataTableType.
+	    throw new io.cucumber.java.PendingException();
+	}
+	@When("clicks on Search button")
+	public void clicks_on_search_button() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Then("relevant holiday packages matching search criteria are displayed")
+	public void relevant_holiday_packages_matching_search_criteria_are_displayed() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	
+
+}

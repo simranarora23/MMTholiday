@@ -1,0 +1,70 @@
+package Page;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class S2PageFac {
+	WebDriver driver;
+	
+	
+	public S2PageFac(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver,this);
+	}
+	@FindBy(xpath="//div[@class=\"hdsw_inner\"]/child::div[1]")
+	WebElement fromDiv;
+	
+	@FindBy(xpath="//div[@class=\"sections-citypicker-container\"]/child::input[@class=\"citypicker_input\"]")
+	WebElement fromInput;
+	
+	@FindBy(xpath="//div[@class=\"hdsw_inner\"]/child::div[1]/child::div[@data-testid=\"geoLocationSearch\"]/child::div[@class=\"sections-citypicker-container\"]/child::div[@class=\"citypicker_list\"]/child::div[@class=\"searchedCity\"]/ul/li[1]")
+	WebElement fromDrop;
+	
+	@FindBy(xpath="//div[@class=\"hdsw_inner\"]/child::div[@class=\"hdsw_inputBox selectHtlCity   grow-1\"]")
+	WebElement toDiv;
+	
+	@FindBy(xpath="//div[@class=\"dest-search-container\"]/child::input[@class=\"dest-search-input\"]")
+	WebElement toInput;
+	
+	@FindBy(xpath="//div[@class=\"dest-search-list\"]/child::div[1]/child::div[@class=\"dest-city-container\"]")
+	WebElement toDrop;
+	
+	@FindBy(xpath="//div[@class=\"DayPicker-Months\"]/child::div[@class=\"DayPicker-Month\"][2]/child::div[@class=\"DayPicker-Body\"]/child::div[@class=\"DayPicker-Week\"][4]/child::div[@aria-label=\"Sun May 19 2024\"]")
+	WebElement depDate;
+	
+	
+	@FindBy(xpath = "//div[@class=\"btnContainer \"]/child::button[@class=\"applyBtn\"]")
+	WebElement roomApply;
+	
+	@FindBy(xpath="//div[@class=\"filter-input-base\"]/child::div[@class=\"action-container\"]/child::button[@class=\"action\"]")
+	WebElement optApply;
+	
+    @FindBy(xpath = "//div[@class=\"hdsw \"]/child::p[@class=\"makeFlex vrtlCenter\"]/child::button[@class=\"primaryBtn font24 latoBlack widgetSearchBtn lineHeight29\"]")
+    WebElement searchBtn;		
+
+public void enterDetails()
+{
+	fromDiv.click();
+	fromInput.click();
+	fromInput.clear();
+	fromInput.sendKeys("Indore");
+	toDiv.click();
+	toInput.click();
+	toInput.sendKeys("Europe");
+	toDrop.click();
+	depDate.click();
+	roomApply.click();
+	optApply.click();
+	
+	
+}
+
+
+
+public void clickSearchBtn()
+{
+	searchBtn.click();
+}
+}

@@ -1,0 +1,36 @@
+package StepDefinition;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.Map;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+//import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
+import org.openqa.selenium.WebDriver;
+
+import Page.S1PageFac;
+import Page.S2PageFac;
+import DriverSetup.SetupDriver;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class BaseStepDefinition {
+	//Background//
+	static WebDriver driver;
+	static WebDriver driver1;
+	S1PageFac page;
+
+	
+
+
+
+
+}
